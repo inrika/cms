@@ -1,0 +1,44 @@
+<%= form_for([:admin,page]) do |f| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url_of_page %>
+    <%= f.text_field :url_of_page %>
+  </div>
+
+  <div class="field">
+    <%= f.label :template_id %>
+    <%= f.select "template_id", options_from_collection_for_select(@templates,"id","title")%>
+
+
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_published %>
+    <%= f.check_box :is_published %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
