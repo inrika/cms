@@ -14,17 +14,6 @@
     <%= yield %>
   </body>
 <footer>
-  <% if admin_signed_in? %>
-      <ul>
-        <li><%=link_to 'Pages',admin_pages_path %></li>
-        <li><%=link_to 'Templates',admin_templates_path %></li>
-      </ul>
-      <br>
-      <%=link_to 'Logout',destroy_admin_session_path, :method => :delete %>
-  <% else %>
-      <%=link_to 'Login',admin_session_path %>
-  <% end %>
-
-</footer>
+ </footer>
 
 </html>

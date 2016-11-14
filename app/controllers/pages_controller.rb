@@ -1,14 +1,15 @@
 class PagesController < ApplicationController
-   # GET /pages/1
-  # GET /pages/1.json
-  def show
+   def show
     begin
-    @page = Page.find(params[:id])
-    @template = Template.find(@page.template_id)
-     rescue
-       render_404
-     end
+  #  @page = Page.find(params[:id]) # обработать исключение не получилось
+      @page = Page.find_by_id(params[:id])
+      if @page
+        @template = Template.find(@page.template_id)
+      else
+        render  "pages/_error"
+      end
 
+     end
   end
   private
    # Never trust parameters from the scary internet, only allow the white list through.

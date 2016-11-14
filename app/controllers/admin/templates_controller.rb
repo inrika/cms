@@ -1,5 +1,6 @@
 class Admin::TemplatesController < ApplicationController
   before_action :set_template, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /templates
   # GET /templates.json
