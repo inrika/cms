@@ -1,30 +1,23 @@
 class Admin::PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!
-  # GET /pages
-  # GET /pages.json
-  def index
+   def index
     @pages = Page.all
   end
 
-  # GET /pages/1
-  # GET /pages/1.json
+
   def show
   end
 
-  # GET /pages/new
   def new
     @templates = Template.all
     @page = Page.new
   end
 
-  # GET /pages/1/edit
   def edit
     @templates = Template.all
   end
 
-  # POST /pages
-  # POST /pages.json
   def create
     @page = Page.new(page_params)
 

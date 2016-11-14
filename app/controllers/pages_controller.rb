@@ -12,7 +12,6 @@ class PagesController < ApplicationController
      end
   end
   private
-   # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
       params.require(:page).permit(:title, :url_of_page, :template_id, :content, :is_published)
     end
