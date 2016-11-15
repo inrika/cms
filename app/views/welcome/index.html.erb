@@ -1,11 +1,9 @@
 <h1>Главная страница</h1>
 
 <ul>
-  <li><%=link_to 'Page1', page_to_show(1) %></li>
-  <li><%=link_to 'Page2',page_to_show(2) %></li>
-  <li><%=link_to 'Page3',page_to_show(3) %></li>
-  <li><%=link_to 'Page4',page_to_show(4) %></li>
-  <li><%=link_to 'Page6',page_to_show(6) %></li>
+  <%@pages.each do |page|%>
+    <li><%=link_to page.title, page.url_of_page %></li>
+  <%end%>
  </ul>
 
 <% if admin_signed_in? %>

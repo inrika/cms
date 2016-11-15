@@ -1,24 +1,16 @@
-# README
+**Простейшая CMS на Rails.** 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+В администраторской части возможно создавать шаблоны(templates), имеющие название и некий общий контент 
+для страниц  и страницы (pages) для которых определено название, ссылка, шаблон, контент и статус (опубликована или нет)
 
-Things you may want to cover:
+Есть фронтэнд часть приложения, где отображается часть, который задан в админке. Для админа регистрация сделана с помощью
+gem devise.
 
-* Ruby version
+**The simple CMS on Rails**
 
-* System dependencies
+In an administrator part it is possible to create 
+- templates having the name and certain general content  for pages 
+- pages with the name, the link, a template, content and the status (it is published or not).
+There is a frontend a part of the application where the website is displayed
+Gem ‘devise’ is used for the administrator registration 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

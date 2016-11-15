@@ -1,4 +1,4 @@
 <h1> <%=@page.title%> </h1>
 <p>
-    <%= simple_format(@template.content.to_s.sub("{%yield%}", @page.content)) %>
+    <%= raw(@template.content.to_s.sub("{%yield%}", @page.content)) %>
 </p>
